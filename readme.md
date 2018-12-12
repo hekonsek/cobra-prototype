@@ -4,7 +4,7 @@
 export GITHUB_USER=xxx
 export CLI=mycli
 
-git clone 
+git clone git@github.com:hekonsek/cobra-prototype.git
 mkdir -p $GITHUB_USER
 mv cobra-prototype $GITHUB_USER/$CLI
 cd $GITHUB_USER/$CLI
