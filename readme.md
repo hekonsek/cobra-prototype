@@ -1,13 +1,15 @@
 # Cobra prototype
 
 ```
-export GITHUB_USER=xxx
+export GITHUB_USER=myusername
 export CLI=mycli
 
-git clone git@github.com:hekonsek/cobra-prototype.git
-mkdir -p $GITHUB_USER
-mv cobra-prototype $GITHUB_USER/$CLI
-cd $GITHUB_USER/$CLI
-sed -i "s/hekonsek/$GITHUB_USER/g" go.mod
-sed -i "s/cobra-prototype/$CLI/g" go.mod
+cd ~/go/src
+mkdir -p github.com/$GITHUB_USER
+git clone git@github.com:hekonsek/cobra-prototype.git github.com/$GITHUB_USER/$CLI
+cd github.com/$GITHUB_USER/$CLI
+rm -rf .git
+mv cobra-prototype $CLI
+sed -i "s/hekonsek/$GITHUB_USER/g" * cmd/*
+sed -i "s/cobra-prototype/$CLI/g" * cmd/*
 ```
